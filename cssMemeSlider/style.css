@@ -4,3 +4,105 @@ html, body {
     box-sizing: border-box;
     background: #34495e;
 }
+
+.radio {
+    display: none;
+}
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 696px;
+    margin: 5% auto;
+}
+.slider {
+    width: 100%;
+    /* position: absolute; */
+    height: 696px; 
+    /* padding-top: 56.25%; */
+    overflow: hidden;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    /* top: 0; */
+    /* left: 0; */
+    border-radius: 20px;
+    transition: opacity 1.3s ease-in-out;
+    opacity: 0;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    /* transition: opacity 1.3s ease-in-out; */
+}
+.caption {
+    position: absolute;
+    width: 100%;
+    bottom: -10%;
+    color: #ffeb3b;
+    font-weight: 400;
+    font-size: 25px;
+    transition: 0.9s;
+}
+
+.dots {
+    width: 100%;
+    position: absolute;
+    bottom: -10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: 60 px;
+}
+.dots label {
+    width: 15px;
+    height: 15px;
+    border: 4px solid ;
+    background: #fff;
+    margin: 0 10px;
+    border-radius: 50%;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.dots label:hover {
+    opacity: 0.7;
+}
+
+#radio-1:checked ~ #slide-1,
+#radio-2:checked ~ #slide-2,
+#radio-3:checked ~ #slide-3,
+#radio-4:checked ~ #slide-4,
+#radio-5:checked ~ #slide-5 {
+    opacity: 1;
+}
+
+#radio-1:checked ~ #slide-1 img,
+#radio-2:checked ~ #slide-2 img,
+#radio-3:checked ~ #slide-3 img,
+#radio-4:checked ~ #slide-4 img,
+#radio-5:checked ~ #slide-5 img {
+    opacity: 1;
+    /* transform: scale(1); */
+}
+
+#radio-1:checked ~ #slide-1 .caption,
+#radio-2:checked ~ #slide-2 .caption,
+#radio-3:checked ~ #slide-3 .caption,
+#radio-4:checked ~ #slide-4 .caption,
+#radio-5:checked ~ #slide-5 .caption {
+    opacity: 1;
+}
+
+#radio-1:checked ~ .dots #label-1,
+#radio-2:checked ~ .dots #label-2,
+#radio-3:checked ~ .dots #label-3,
+#radio-4:checked ~ .dots #label-4,
+#radio-5:checked ~ .dots #label-5 {
+    background: #ffeb3b;
+    opacity: 1;
+}
