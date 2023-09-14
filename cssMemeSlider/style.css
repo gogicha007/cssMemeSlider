@@ -37,7 +37,7 @@ html, body {
 .caption {
     position: absolute;
     width: 100%;
-    bottom: -8%;
+    bottom: -7.5%;
     color: #ffc300;
     font-weight: 400;
     font-size: 1.5rem;
@@ -82,14 +82,6 @@ html, body {
 #radio-3:checked ~ #slide-3,
 #radio-4:checked ~ #slide-4,
 #radio-5:checked ~ #slide-5 {
-    opacity: 1;
-}
-
-#radio-1:checked ~ #slide-1 img,
-#radio-2:checked ~ #slide-2 img,
-#radio-3:checked ~ #slide-3 img,
-#radio-4:checked ~ #slide-4 img,
-#radio-5:checked ~ #slide-5 img {
     opacity: 1;
 }
 
