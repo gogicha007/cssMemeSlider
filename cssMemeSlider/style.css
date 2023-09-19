@@ -1,55 +1,74 @@
 html, body {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     background: #34495e;
     font-size: 16px;
 }
-
 .radio {
     display: none;
 }
 .container {
-    position: relative;
     display: flex;
     flex-direction: column;
-    width: 696px;
-    height: 696px; 
+    justify-content: space-between;
+    gap: 1.9rem;
+    width: 43.5rem;
     margin: 5% auto;
 }
 .slider {
     width: 100%;
+    height: 43.5rem;
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
 }
-.slide {
-    position: absolute;
+.slider-inner {
     width: 100%;
-    border-radius: 1.25rem;
-    transition: opacity 1.3s ease-in-out;
-    opacity: 0;
+    display: flex;
 }
-.slide img {
+.images {
     width: 100%;
-    height: 100%;
+    display: flex;
+    transition: transform 0.6s;
+    transform: translateX(0%);
+}
+.images img {
+    width: 100%;
+    flex-shrink: 0;
     border-radius: 1.24rem;
-    object-fit: cover;
 }
-.caption {
-    position: absolute;
-    width: 100%;
-    bottom: -7.5%;
+.captions {
     color: #ffc300;
     font-weight: 400;
     font-size: 1.5rem;
-    transition: 0.9s;
+    display: flex;
+    overflow: hidden;
 }
-
+.captions-inner {
+    display: flex;
+    transition: transform 0.6s;
+    transform: translateX(0%);
+}
+.captions p {
+    width: 100%;
+    margin: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-align: left;
+}
+.bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.9rem;
+    flex-direction: row-reverse;
+}
 .dots {
     width: 100%;
-    position: absolute;
-    bottom: -8%;
+    margin: 0;
     display: flex;
-    justify-content: right;
+    justify-content: end;
     align-items: center;
     gap: 2%;
 }
@@ -63,68 +82,67 @@ html, body {
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
-.dots label::before {
-    content: ' ';
-    position: absolute;
-    height: 3rem;
-    width: 1.8rem;
-    /* background-color: red; */
-    /* opacity: 0.4; */
-    top: -0.6rem;
-}
 
 .dots label:hover {
     opacity: 0.7;
 }
-
-#radio-1:checked ~ #slide-1,
-#radio-2:checked ~ #slide-2,
-#radio-3:checked ~ #slide-3,
-#radio-4:checked ~ #slide-4,
-#radio-5:checked ~ #slide-5 {
-    opacity: 1;
+#radio-1:checked ~ .slider .slider-inner .images {
+    transform: translateX(0);
+}
+#radio-2:checked ~ .slider .slider-inner .images {
+    transform: translateX(-100%);
+}
+#radio-3:checked ~ .slider .slider-inner .images {
+    transform: translateX(-200%);
+}
+#radio-4:checked ~ .slider .slider-inner .images {
+    transform: translateX(-300%);
+}
+#radio-5:checked ~ .slider .slider-inner .images {
+    transform: translateX(-400%);
 }
 
-#radio-1:checked ~ #slide-1 .caption,
-#radio-2:checked ~ #slide-2 .caption,
-#radio-3:checked ~ #slide-3 .caption,
-#radio-4:checked ~ #slide-4 .caption,
-#radio-5:checked ~ #slide-5 .caption {
-    opacity: 1;
+#radio-1:checked ~ .bottom .captions .captions-inner {
+    transform: translateX(0);
+}
+#radio-2:checked ~ .bottom .captions .captions-inner {
+    transform: translateX(-100%);
+}
+#radio-3:checked ~ .bottom .captions .captions-inner {
+    transform: translateX(-200%);
+}
+#radio-4:checked ~ .bottom .captions .captions-inner {
+    transform: translateX(-300%);
+}
+#radio-5:checked ~ .bottom .captions .captions-inner {
+    transform: translateX(-400%);
 }
 
-#radio-1:checked ~ .dots #label-1,
-#radio-2:checked ~ .dots #label-2,
-#radio-3:checked ~ .dots #label-3,
-#radio-4:checked ~ .dots #label-4,
-#radio-5:checked ~ .dots #label-5 {
+#radio-1:checked ~ .bottom .dots #label-1,
+#radio-2:checked ~ .bottom .dots #label-2,
+#radio-3:checked ~ .bottom .dots #label-3,
+#radio-4:checked ~ .bottom .dots #label-4,
+#radio-5:checked ~ .bottom .dots #label-5 {
     background: #ffc300;
     opacity: 1;
 }
 
-
 @media (max-width: 768px) {
     .container {
-        width: 480px;
+        width: 30rem;
+        height: 40rem;
+    }
+    .bottom {
+        flex-direction: column;
     }
     .dots {
         justify-content: center;
-        bottom: 23%;
-    }
-    .caption {
-        bottom: -21%
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        width: 320px;
-    }
-    .dots {
-        justify-content: center;
-        bottom: 47%;
-    }
-    .caption {
-        bottom: -27%
+        width: 20rem;
+        width: 30rem;
     }
 }
