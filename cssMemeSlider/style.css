@@ -70,28 +70,33 @@ html, body {
     display: flex;
     justify-content: end;
     align-items: center;
-    gap: 3%;
+    gap: 1%;
 }
 
 .dots label {
-    width: 1rem;
-    height: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.2rem solid #808b96;
-    background: #808b96 padding-box;
+    width: 3.1rem;
+    height: 3.1rem;
+    background: radial-gradient(
+        circle closest-side,
+        #ffc300 60%,
+        transparent 65%
+      );
     border-radius: 50%;
     opacity: 0.3;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
-
 .dots label:hover {
     opacity: 0.7;
 }
 .dots label:active {
-    background-color: #ffc300;
+    background: radial-gradient(
+        circle closest-side,
+        #ffc300 38%,
+        #808b96 32%,
+        #808b96 60%,
+        transparent 70%
+      );
 }
 #radio-1:checked ~ .slider .slider-inner .images {
     transform: translateX(0);
@@ -130,7 +135,13 @@ html, body {
 #radio-3:checked ~ .bottom .dots #label-3,
 #radio-4:checked ~ .bottom .dots #label-4,
 #radio-5:checked ~ .bottom .dots #label-5 {
-    background: #ffc300;
+    background: radial-gradient(
+        circle closest-side,
+        #ffc300 38%,
+        #808b96 32%,
+        #808b96 60%,
+        transparent 65%
+      );
     opacity: 1;
 }
 
