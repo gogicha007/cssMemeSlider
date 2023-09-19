@@ -79,22 +79,12 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid #808b96;
+    border: 0.2rem solid #808b96;
     background: #808b96 padding-box;
     border-radius: 50%;
     opacity: 0.3;
     cursor: pointer;
-    font-size: 40px;
     transition: 0.2s ease-in-out;
-}
-.dots label div {
-    width: 12px;
-    height: 12px;
-    margin: 0;
-    padding: 0;
-    border: 3px solid #808b96;
-    border-radius: 50%;
-    background: #808b96; 
 }
 
 .dots label:hover {
